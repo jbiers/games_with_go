@@ -25,6 +25,17 @@ func playStory(page *bookPage) {
 	}
 }
 
+func addPage(prevPage *bookPage, text string) {
+	newPage := bookPage{text, prevPage.nextPage}
+
+	prevPage.nextPage = &newPage
+}
+
+func removePage(page *bookPage) {
+	page.text = page.nextPage.text
+	page.nextPage = page.nextPage.nextPage
+}
+
 func main() {
 
 	page1 := bookPage{"It was a dark and stormy night.", nil}
@@ -33,6 +44,9 @@ func main() {
 
 	page1.nextPage = &page2
 	page2.nextPage = &page3
+
+	addPage(&page3, "The place smelled of foulness.")
+	removePage(&page3)
 
 	playStory(&page1)
 }
