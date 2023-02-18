@@ -40,5 +40,4 @@ func main() {
 	goomba := badGuy{"Goomba", 100, p}
 
 	whereIsBadGuy(&goomba)
-
 }
