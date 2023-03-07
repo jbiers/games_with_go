@@ -37,7 +37,6 @@ func removePage(page *bookPage) {
 }
 
 func main() {
-
 	page1 := bookPage{"It was a dark and stormy night.", nil}
 	page2 := bookPage{"You are alone, and you need to find the sacred helmet.", nil}
 	page3 := bookPage{"You see a troll ahead.", nil}
